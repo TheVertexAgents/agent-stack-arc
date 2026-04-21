@@ -12,9 +12,9 @@ dotenv.config();
  * USDC is the native gas token.
  */
 export const arcChain = defineChain({
-  id: 2501, // Mock/Placeholder Chain ID for Arc Devnet - verify during Phase 3
-  name: 'Arc L1 Devnet',
-  network: 'arc-devnet',
+  id: Number(process.env.ARC_CHAIN_ID) || 5042002,
+  name: 'Arc L1 Testnet',
+  network: 'arc-testnet',
   nativeCurrency: {
     name: 'USDC',
     symbol: 'USDC',
@@ -22,14 +22,14 @@ export const arcChain = defineChain({
   },
   rpcUrls: {
     default: {
-      http: ['https://rpc.arc-l1.circle.com'],
+      http: [process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network'],
     },
     public: {
-      http: ['https://rpc.arc-l1.circle.com'],
+      http: [process.env.ARC_RPC_URL || 'https://rpc.testnet.arc.network'],
     },
   },
   blockExplorers: {
-    default: { name: 'ArcScan', url: 'https://explorer.arc-l1.circle.com' },
+    default: { name: 'ArcScan', url: 'https://explorer.testnet.arc.network' },
   },
 });
 

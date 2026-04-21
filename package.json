@@ -8,7 +8,11 @@
     "stress-test": "tsx scripts/stress_test.ts"
   },
   "dependencies": {
+    "@circle-fin/developer-controlled-wallets": "^10.3.0",
+    "@types/blessed": "^0.1.27",
     "axios": "^1.15.1",
+    "blessed": "^0.1.81",
+    "chalk": "^5.6.2",
     "dotenv": "^16.6.1",
     "express": "^4.22.1",
     "viem": "^2.48.2",

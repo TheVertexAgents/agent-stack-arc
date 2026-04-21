@@ -17,15 +17,15 @@ async function main() {
   processes.push(orchestrator);
 
   // Wait for services to warm up
-  console.log('Waiting 5s for services to start...');
-  await new Promise(r => setTimeout(r, 5000));
+  console.log('Waiting 25s for services to start and stabilize on Live Network...');
+  await new Promise(r => setTimeout(r, 25000));
 
   try {
     // 3. Send Test Request with retries
     console.log('Sending orchestration request (with retries)...');
     let result;
     let attempts = 0;
-    const maxAttempts = 5;
+    const maxAttempts = 10;
 
     while (attempts < maxAttempts) {
       try {
@@ -37,8 +37,8 @@ async function main() {
         break;
       } catch (error: any) {
         if (attempts >= maxAttempts) throw error;
-        console.log(`Attempt ${attempts} failed, retrying in 2s...`);
-        await new Promise(r => setTimeout(r, 2000));
+        console.log(`Attempt ${attempts} failed: ${error.message}, retrying in 3s...`);
+        await new Promise(r => setTimeout(r, 3000));
       }
     }
 

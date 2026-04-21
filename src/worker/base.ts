@@ -3,6 +3,8 @@ import type { Request, Response } from 'express';
 import { X402Processor } from '../payments/x402.js';
 import { logger } from '../utils/logger.js';
 import type { X402Challenge } from '../types/payments.js';
+import { publicClient } from '../arc/client.js';
+import { privateKeyToAccount } from 'viem/accounts';
 
 /**
  * @title AbstractWorker
@@ -15,18 +17,24 @@ export abstract class AbstractWorker {
   protected walletAddress: string;
   protected price: string;
 
-  constructor(serviceName: string, port: number, walletAddress: string, price: string = '0.002') {
+  constructor(serviceName: string, port: number, addressOrKey: string, price: string = '0.002') {
     this.serviceName = serviceName;
     this.port = port;
-    this.walletAddress = walletAddress;
     this.price = price;
+
+    if (addressOrKey.length === 64 || (addressOrKey.startsWith('0x') && addressOrKey.length === 66)) {
+      const account = privateKeyToAccount(addressOrKey.startsWith('0x') ? addressOrKey as `0x${string}` : `0x${addressOrKey}`);
+      this.walletAddress = account.address;
+    } else {
+      this.walletAddress = addressOrKey;
+    }
 
     this.app.use(express.json());
     this.setupRoutes();
   }
 
   private setupRoutes() {
-    this.app.post('/task', (req: Request, res: Response) => {
+    this.app.post('/task', async (req: Request, res: Response) => {
       const paymentProof = req.header('x-payment-proof');
 
       if (!paymentProof) {
@@ -50,15 +58,32 @@ export abstract class AbstractWorker {
         });
       }
 
-      // In a real app, we would verify the proof on Arc L1 here.
-      // For the mock, we assume the orchestrator isn't lying.
-      logger.info({ 
-        module: this.serviceName, 
-        message: 'Payment verified. Unlocking payload.', 
-        proof: paymentProof 
-      });
-      
-      return res.status(200).json(this.handleTask(req.body));
+      // Real Arc L1 Verification with wait for mining
+      try {
+        const receipt = await publicClient.waitForTransactionReceipt({ 
+          hash: paymentProof as `0x${string}`,
+          timeout: 10000 
+        });
+
+        if (receipt.status !== 'success') {
+          throw new Error('Payment transaction failed on-chain');
+        }
+
+        logger.info({ 
+          module: this.serviceName, 
+          message: 'Payment verified on Arc L1. Unlocking payload.', 
+          proof: paymentProof 
+        });
+        
+        return res.status(200).json(this.handleTask(req.body));
+      } catch (error: any) {
+        logger.warn({ 
+          module: this.serviceName, 
+          message: 'Payment verification failed', 
+          error: error.message 
+        });
+        return res.status(402).json({ error: 'Payment verification failed. Please check tx hash.' });
+      }
     });
   }
 

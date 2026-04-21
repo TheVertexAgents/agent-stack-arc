@@ -1,8 +1,14 @@
 import winston from 'winston';
+import { dashboard } from './dashboard.js';
 
 const { combine, timestamp, json, colorize, printf, errors } = winston.format;
 
 const consoleFormat = printf(({ level, message, timestamp, module, ...metadata }) => {
+  // Update Dashboard if enabled
+  if (dashboard) {
+    dashboard.log(module as string || 'General', message as string, metadata);
+  }
+
   let msg = `${timestamp} [${level}]${module ? ` [${module}]` : ''}: ${message}`;
   if (Object.keys(metadata).length > 0) {
     msg += ` ${JSON.stringify(metadata)}`;
