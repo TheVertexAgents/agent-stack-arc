@@ -1,0 +1,25 @@
+{
+  "name": "agent-stack-arc",
+  "version": "1.0.0",
+  "description": "Agentic Economy on Arc - Agent-to-Agent Payment Loop",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "stress-test": "tsx scripts/stress_test.ts"
+  },
+  "dependencies": {
+    "axios": "^1.15.1",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "viem": "^2.48.2",
+    "winston": "^3.19.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.18",
+    "@types/node": "^20.19.39",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

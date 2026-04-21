@@ -1,0 +1,142 @@
+[
+  {
+    "iteration": 1,
+    "timestamp": "2026-04-21T09:15:31.288Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 2,
+    "timestamp": "2026-04-21T09:15:31.936Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 3,
+    "timestamp": "2026-04-21T09:15:32.591Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 4,
+    "timestamp": "2026-04-21T09:15:33.300Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 5,
+    "timestamp": "2026-04-21T09:15:33.985Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 6,
+    "timestamp": "2026-04-21T09:15:34.611Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 7,
+    "timestamp": "2026-04-21T09:15:35.226Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 8,
+    "timestamp": "2026-04-21T09:15:35.828Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 9,
+    "timestamp": "2026-04-21T09:15:36.595Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 10,
+    "timestamp": "2026-04-21T09:15:37.230Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 11,
+    "timestamp": "2026-04-21T09:15:37.874Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 12,
+    "timestamp": "2026-04-21T09:15:38.553Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 13,
+    "timestamp": "2026-04-21T09:15:39.288Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 14,
+    "timestamp": "2026-04-21T09:15:39.957Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 15,
+    "timestamp": "2026-04-21T09:15:40.649Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 16,
+    "timestamp": "2026-04-21T09:15:41.297Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 17,
+    "timestamp": "2026-04-21T09:15:42.017Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 18,
+    "timestamp": "2026-04-21T09:15:42.657Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 19,
+    "timestamp": "2026-04-21T09:15:43.330Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  },
+  {
+    "iteration": 20,
+    "timestamp": "2026-04-21T09:15:43.995Z",
+    "paid": 0.01,
+    "margin": 0.006,
+    "worker_txs": 2
+  }
+]
