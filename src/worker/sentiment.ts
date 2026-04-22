@@ -25,7 +25,7 @@ if (process.argv[1]?.includes('sentiment.ts')) {
   const worker = new SentimentWorker(
     'SentimentWorker', 
     3002, 
-    process.env.WORKER_B_PRIVATE_KEY || '0x0000000000000000000000000000000000000002'
+    process.env.WORKER_2_PRIVATE_KEY || '0x0000000000000000000000000000000000000002'
   );
   worker.start();
 }

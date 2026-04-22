@@ -24,7 +24,7 @@ if (process.argv[1]?.includes('specialist.ts')) {
   const worker = new MarketDataWorker(
     'MarketDataWorker', 
     3001, 
-    process.env.WORKER_A_PRIVATE_KEY || '0x0000000000000000000000000000000000000001'
+    process.env.WORKER_1_PRIVATE_KEY || '0x0000000000000000000000000000000000000001'
   );
   worker.start();
 }
