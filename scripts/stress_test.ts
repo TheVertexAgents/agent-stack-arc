@@ -42,10 +42,22 @@ async function waitForServices(urls: string[], timeoutMs: number): Promise<void>
 async function runStressTest() {
   console.log(`--- STARTING AGENTSTACK STRESS TEST (${ITERATIONS} iterations) ---`);
 
-  const worker1 = spawn('./node_modules/.bin/tsx', ['src/worker/specialist.ts'], { stdio: 'inherit' });
-  const worker2 = spawn('./node_modules/.bin/tsx', ['src/worker/sentiment.ts'], { stdio: 'inherit' });
+  // Cleanup any stray processes on our ports before starting
+  const ports = [3000, 3001, 3002];
+  for (const port of ports) {
+    try {
+      if (process.platform !== 'win32') {
+        spawn('sh', ['-c', `lsof -t -i:${port} | xargs kill -9`], { stdio: 'ignore' });
+      }
+    } catch (e) {
+      // Ignore cleanup errors
+    }
+  }
+
+  const worker1 = spawn('npx', ['tsx', 'src/worker/specialist.ts'], { stdio: 'inherit' });
+  const worker2 = spawn('npx', ['tsx', 'src/worker/sentiment.ts'], { stdio: 'inherit' });
   processes.push(worker1, worker2);
-  const orchestrator = spawn('./node_modules/.bin/tsx', ['src/orchestrator/engine.ts'], { stdio: 'inherit' });
+  const orchestrator = spawn('npx', ['tsx', 'src/orchestrator/engine.ts'], { stdio: 'inherit' });
   processes.push(orchestrator);
 
   console.log('Polling for service readiness (max 120s)...');

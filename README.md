@@ -52,11 +52,11 @@ npm run stress-test
 |---|---|
 | Iterations | 20 |
 | Projected On-Chain Txs | 60 |
-| Total Margin Earned | $0.1495 USDC |
-| Margin per Request | $0.006 – $0.009 USDC (variable) |
-| Worker Cost (each) | $0.002 USDC |
-| User Price (with priority fee) | $0.010 – $0.013 USDC |
-| Gross Margin | ~60% |
+| Total Margin Earned | $0.1200 USDC |
+| Margin per Request | $0.0060 USDC (fixed) |
+| Worker Cost (each) | $0.0020 USDC |
+| User Price | $0.0100 USDC |
+| Gross Margin | 60% |
 
 ## 📊 Margin Proof
 See [docs/MARGIN_PROOF.md](docs/MARGIN_PROOF.md) for a detailed breakdown of how we achieved 60% gross margins on sub-cent transactions.
