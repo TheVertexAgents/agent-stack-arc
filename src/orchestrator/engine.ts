@@ -2,18 +2,14 @@ import express from 'express';
 import type { Request, Response } from 'express';
 import { Contractor } from './contractor.js';
 import { logger } from '../utils/logger.js';
+import { TaskDecomposer } from './decomposer.js';
 import type { TaskResult } from '../types/orchestrator.js';
+import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-
-// Configured Worker URLs
-const WORKER_CONFIG = {
-  MARKET_DATA: 'http://localhost:3001/task',
-  SENTIMENT: 'http://localhost:3002/task'
-};
 
 /**
  * @title Orchestrator Engine
@@ -28,30 +24,40 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
   logger.info({ module: 'Orchestrator', message: 'New request received', prompt });
 
   try {
-    // Phase 2 MVP: Hardcoded decomposition for Market Data + Sentiment
-    // In later phases, this could be LLM-driven via Genkit.
+    const subTasks = TaskDecomposer.decompose(prompt);
     
-    logger.info({ module: 'Orchestrator', message: 'Decomposing task into sub-jobs' });
+    const jobs = await Promise.all(
+      subTasks.map(task => Contractor.hire(task.workerUrl, task.data))
+    );
 
-    const [marketJob, sentimentJob] = await Promise.all([
-      Contractor.hire(WORKER_CONFIG.MARKET_DATA, { pair: 'BTC/USDC' }),
-      Contractor.hire(WORKER_CONFIG.SENTIMENT, { pair: 'BTC/USDC' })
-    ]);
+    let totalWorkerCost = 0;
+    const workerResults = jobs.map((job, i) => {
+      totalWorkerCost += job.cost;
+      return {
+        name: subTasks[i].workerName,
+        cost: job.cost,
+        result: job.result,
+        proof: job.result?.proof || job.result?.txHash || null
+      };
+    });
 
-    const totalWorkerCost = marketJob.cost + sentimentJob.cost;
-    // Strict sub-cent compliance: USER_PRICE ≤ $0.01 per hackathon rules
     const USER_PRICE = 0.01;
-    const userPrice = USER_PRICE;
-    const margin = userPrice - totalWorkerCost;
+    const netProfit = USER_PRICE - totalWorkerCost;
+    const marginPercent = (netProfit / USER_PRICE) * 100;
+
+    const expenses: any = { gas: "0.000 USDC" };
+    workerResults.forEach(w => {
+      const key = w.name.replace(/\s+/g, '').replace(/^\w/, c => c.toLowerCase());
+      expenses[key] = `${w.cost.toFixed(3)} USDC`;
+    });
 
     const result: TaskResult = {
-      paid: userPrice,
-      workers: [
-        { name: 'Market Data Specialist', cost: marketJob.cost, result: marketJob.result },
-        { name: 'Social Sentiment Analyst', cost: sentimentJob.cost, result: sentimentJob.result }
-      ],
-      margin: parseFloat(margin.toFixed(4)),
-      gas: 0,
+      taskId: uuidv4(),
+      revenue: `${USER_PRICE.toFixed(3)} USDC`,
+      expenses,
+      netProfit: `${netProfit.toFixed(3)} USDC`,
+      margin: `${marginPercent.toFixed(0)}%`,
+      workers: workerResults,
       timestamp: new Date().toISOString()
     };
 

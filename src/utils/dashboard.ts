@@ -99,11 +99,13 @@ export class Dashboard {
     
     if (metadata) {
       if (metadata.margin) {
-        this.totalUsdc += (metadata.paid || 0.01);
-        this.totalCost += (this.totalUsdc - metadata.margin);
+        const revenue = parseFloat(metadata.revenue) || 0.01;
+        const netProfit = parseFloat(metadata.netProfit) || 0.006;
+        this.totalUsdc += revenue;
+        this.totalCost += (revenue - netProfit);
         this.updateStats();
       }
-      if (metadata.proof || metadata.txHash) {
+      if (metadata.proof || metadata.txHash || (metadata.message && metadata.message.includes('Payment verified'))) {
         this.txCount++;
         this.updateArc();
       }

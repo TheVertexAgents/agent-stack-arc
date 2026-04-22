@@ -21,10 +21,11 @@ export class MarketDataWorker extends AbstractWorker {
 
 // Start standalone if script is run directly
 if (process.argv[1]?.includes('specialist.ts')) {
+  const address = process.env.WORKER_MARKET_ADDRESS || '0x0000000000000000000000000000000000000001';
   const worker = new MarketDataWorker(
     'MarketDataWorker', 
     3001, 
-    process.env.WORKER_1_PRIVATE_KEY || '0x0000000000000000000000000000000000000001'
+    address
   );
   worker.start();
 }

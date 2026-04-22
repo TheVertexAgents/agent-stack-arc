@@ -1,12 +1,17 @@
 export interface TaskResult {
-  paid: number; // Total paid by user
+  taskId: string;
+  revenue: string;
+  expenses: {
+    [key: string]: string;
+    gas: string;
+  };
+  netProfit: string;
+  margin: string;
   workers: {
     name: string;
     cost: number;
     result: any;
   }[];
-  margin: number; // Orchestrator profit
-  gas: number; // Always 0 on Arc
   timestamp: string;
 }
 

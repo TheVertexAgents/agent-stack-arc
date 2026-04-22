@@ -1,142 +1,1022 @@
 [
   {
     "iteration": 1,
-    "timestamp": "2026-04-22T09:02:15.932Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:16.492Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870196490,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866596490,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:16.487Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 2,
-    "timestamp": "2026-04-22T09:02:25.373Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:17.009Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870197006,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866597006,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:17.008Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 3,
-    "timestamp": "2026-04-22T09:02:30.571Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:17.525Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870197523,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866597523,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:17.525Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 4,
-    "timestamp": "2026-04-22T09:02:36.170Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:18.040Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870198038,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866598038,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:18.039Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 5,
-    "timestamp": "2026-04-22T09:02:40.626Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:18.556Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870198555,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866598555,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:18.555Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 6,
-    "timestamp": "2026-04-22T09:02:45.087Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:19.069Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870199067,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866599067,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:19.069Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 7,
-    "timestamp": "2026-04-22T09:02:50.525Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:19.582Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870199580,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866599580,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:19.581Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 8,
-    "timestamp": "2026-04-22T09:02:59.172Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:20.095Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870200092,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866600092,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:20.094Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 9,
-    "timestamp": "2026-04-22T09:03:04.678Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:20.608Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870200606,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866600606,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:20.607Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 10,
-    "timestamp": "2026-04-22T09:03:09.691Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:21.120Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870201118,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866601118,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:21.119Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 11,
-    "timestamp": "2026-04-22T09:03:14.230Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:21.632Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870201630,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866601630,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:21.632Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 12,
-    "timestamp": "2026-04-22T09:03:19.394Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:22.144Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870202142,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866602142,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:22.143Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 13,
-    "timestamp": "2026-04-22T09:03:23.747Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:22.655Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870202654,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866602654,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:22.655Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 14,
-    "timestamp": "2026-04-22T09:03:28.390Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:23.167Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870203165,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866603165,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:23.166Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 15,
-    "timestamp": "2026-04-22T09:03:36.585Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:23.678Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870203676,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866603676,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:23.677Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 16,
-    "timestamp": "2026-04-22T09:03:40.929Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:24.189Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870204187,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866604187,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:24.188Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 17,
-    "timestamp": "2026-04-22T09:03:45.307Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:24.700Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870204698,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866604698,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:24.699Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 18,
-    "timestamp": "2026-04-22T09:03:49.503Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:25.211Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870205209,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866605209,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:25.210Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 19,
-    "timestamp": "2026-04-22T09:03:53.704Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:25.722Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870205720,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866605720,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:25.721Z"
+        },
+        "proof": null
+      }
+    ]
   },
   {
     "iteration": 20,
-    "timestamp": "2026-04-22T09:03:57.886Z",
-    "paid": 0.01,
-    "margin": 0.006,
-    "worker_txs": 2
+    "timestamp": "2026-04-22T15:03:26.232Z",
+    "revenue": "0.010 USDC",
+    "margin": "60%",
+    "workers": [
+      {
+        "name": "Market Data Specialist",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "ohlcv": [
+            {
+              "t": 1776870206231,
+              "o": 65000,
+              "h": 65500,
+              "l": 64800,
+              "c": 65200,
+              "v": 1.2
+            },
+            {
+              "t": 1776866606231,
+              "o": 64800,
+              "h": 65100,
+              "l": 64500,
+              "c": 65000,
+              "v": 0.8
+            }
+          ],
+          "source": "MockKraken",
+          "verified": true
+        },
+        "proof": null
+      },
+      {
+        "name": "Social Sentiment Analyst",
+        "cost": 0.002,
+        "result": {
+          "pair": "BTC/USDC",
+          "sentiment": {
+            "score": 0.78,
+            "indicator": "Bullish",
+            "summary": "Market bias is positive following strong support at 64k.",
+            "source": "MockLunarCrush"
+          },
+          "timestamp": "2026-04-22T15:03:26.232Z"
+        },
+        "proof": null
+      }
+    ]
   }
 ]
