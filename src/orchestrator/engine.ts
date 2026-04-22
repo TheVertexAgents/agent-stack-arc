@@ -1,5 +1,6 @@
 import express from 'express';
 import type { Request, Response } from 'express';
+import cors from 'cors';
 import { Contractor } from './contractor.js';
 import { logger } from '../utils/logger.js';
 import { TaskDecomposer } from './decomposer.js';
@@ -7,6 +8,7 @@ import type { TaskResult } from '../types/orchestrator.js';
 import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;

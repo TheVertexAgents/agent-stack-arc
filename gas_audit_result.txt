@@ -1,0 +1,170 @@
+
+> agent-stack-arc@1.0.0 gas-audit
+> tsx scripts/gas_audit.ts
+
+2026-04-22 15:25:23 [[32minfo[39m] [ArcClient]: Arc L1 Viem clients initialized {"service":"agent-stack"}
+--- STARTING ARC L1 GAS AUDIT ---
+Found 20 iterations to audit.
+
+Checking Tx: 0x6d299fa94a67418200ad75275abf55a8b76ce13512d9d32ecc1793b2fc834984...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x5a5ca92b46c390c27080a3efc86c2062c10d4a3ff8d4bb010cbf12caf5223c2b...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x17ca7189829e9231cdd221a7b6aefb3bdc60ccd542ed71634a514297eeb75e4c...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xbd74595f033d1a6a6f6ec95dc3b6f60bd93f6fcbe6ea3830f1147a75cfd5a7de...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x0903c8d253e87c30b6de5ed3d8b50fa99efbdcb975a01d07d8d79e33ca22941c...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xd509f9fa7b3f6f3844c65722464d06fba190e61f36705fc9ef72d1397240e58e...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xb7ee81781388958c69e438e2fdecc63f31048137ceb100f44f0dbff65ef2d25f...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xebbe722f996c34afbfd448f5a269bad687e20d8b3732bdc245a7075a8349dd6a...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xa4c0640cd3474cc9bd77bd7e900db0743de77a3a060812b9ee50893e12052292...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xadfb0e23dc9e1c4fd4ab3a1d00d6d3ba85abe3cf329284783966055fa7b99379...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x508dee52cdb842ffaa88258980682daa03d6247db7b1f03f234c16b875fccc75...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x5a85d2dd568163fcda9eeb42c540c33943c2df67e6274217dcaf5f7d9d8f393b...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x8f1305ac008b2b33f6d3a73c41ff28225b69e5a1462c03b49c5346ab3a108d1d...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x9fb4ad55d43183c37983538f5e3a3046b7988cc6f3d87110994b39885b4cf032...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x52d7b784af593294399667a132200f307e8c5c44f2bfffa67f196ac560d4853c...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x1d85725c4d5c6c4a45889520f82167c7f7f5046971064b0482411da83d77d5a6...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x92bfd8999eaaa7e64e5d07c77476dce610e84b3daaa3deb90ad9384b4ffd9528...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xaf2983d44c5fe4f95128d97b9aacc51e0a72baa3589da836b9f9cc0a11aa0688...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xd7d36fd76a0d636bb8b2ab8c2c1d170a5f903a33bcf80754481df50a42cadf11...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xeb258bfb6a31894355fd2f38018b0febf5de8f66a2b82fd7cd6333ce701f5a12...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x3f39e7cb8dd07553feb552e06c3a0c53357ed5b1c0c9e404e15a85fad391ba3c...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xbd65147bdf5648ee5d574eacd0ecd0412ce63338a23cad4fc417637bbf3e3061...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x4b576e48fad87326cb0d097f4e3af2c4a090a20b63b4459bed06fde9141c6bb2...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xdb11547a0eb0fafdffef7d51ba23037ee308f3451123b506944ee92941aee3e7...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x4b10a0530db24b164f07e2dc27f074792d43583eae27dad548033b97ef81b124...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x000af6e5c0e8967b5752e749426a654a44e6e80442795448478da1ab0429767b...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x8dcf9387b5ab807d03388581019c3a68781764973adfad74c1414d9c9b60a288...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xa25a19737d7d098196dee7ef7f88f885c8ccea66f227260e1985645e3b4464eb...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x78cc66ca4a350017dc56fcaab8663eab2fc2bb492fbdf5055757541cb50c205e...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xbb87fcd51dd05db5dedef89a7759518fdc681d6ed85003ca9a6bcc1d25bb8e8c...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xf86d63f5c3b07e0b32868a1f779f6708cc015bd32d53e68fb4d7704f190ac270...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x59c33a1196c8353d698b45bc3f43565889b576c8ba1c31bbb93d148324c049b2...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x65dbcdbdc01972b5ddc326a6547c294997bed42106571eaa87b603d81b836823...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x1296feff86a39901e0380851fe9dbb9d1b2e2489eb9b5d9046d2e7d97af544a9...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x7ce1ae617d850b27254fcaf5d68cc46d7601348969b1fcdc51db4c70f2200e12...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0xeaf0c10eef0f0cf7b9aab79002ef59d0fe60adbda1b8fef530ceed1aa9b8361e...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x505e54edda4cfb19dc322d87ba792d0ac30b66c106b4ac96ee344ba572ce8f0b...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045362 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045362 USDC
+Checking Tx: 0x05fe3d4f95a53468adc91f940070ea81cb74e10b2f55e53c08ab6fc2e939680f...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045362 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045362 USDC
+Checking Tx: 0xab6a22e7eeb4648d6a88422623740c7a109860431675691f54d8f512c01df4fb...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+Checking Tx: 0x0ed4974df65bdb62fd0f2c61f3f6a8acb221cdb4e3c250649f42b071bf88a8bb...
+  ✓ Gas Used: 21000
+  ✓ Fee: 0.00045150 USDC
+  ⚠️ Warning: Significant fee detected: 0.00045150 USDC
+
+--- GAS AUDIT COMPLETE ---
