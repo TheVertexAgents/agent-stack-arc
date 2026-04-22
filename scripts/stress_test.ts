@@ -8,19 +8,55 @@ const ORCHESTRATOR_URL = 'http://localhost:3000/orchestrate';
 const ITERATIONS = 20; // 20 loops * 3 txs (User->Orch, Orch->WorkerA, Orch->WorkerB) = 60 txs
 const AUDIT_FILE = 'docs/STRESS_TEST_LOG.json';
 
+/**
+ * Polls an array of health-check URLs until all respond 2xx,
+ * or throws if the deadline (ms) is exceeded.
+ */
+async function waitForServices(urls: string[], timeoutMs: number): Promise<void> {
+  const deadline = Date.now() + timeoutMs;
+  const ready = new Set<string>();
+
+  while (ready.size < urls.length) {
+    if (Date.now() > deadline) {
+      throw new Error(
+        `Services failed to start within ${timeoutMs / 1000}s. ` +
+        `Still waiting on: ${urls.filter(u => !ready.has(u)).join(', ')}`
+      );
+    }
+    for (const url of urls) {
+      if (ready.has(url)) continue;
+      try {
+        await axios.get(url, { timeout: 1000 });
+        ready.add(url);
+        console.log(`  ✓ ${url} is up`);
+      } catch {
+        // Not ready yet — keep polling
+      }
+    }
+    if (ready.size < urls.length) {
+      await new Promise(r => setTimeout(r, 2000));
+    }
+  }
+}
+
 async function runStressTest() {
   console.log(`--- STARTING AGENTSTACK STRESS TEST (${ITERATIONS} iterations) ---`);
-  
-  const worker1 = spawn('npx', ['tsx', 'src/worker/specialist.ts'], { stdio: 'inherit' });
-  const worker2 = spawn('npx', ['tsx', 'src/worker/sentiment.ts'], { stdio: 'inherit' });
+
+  const worker1 = spawn('./node_modules/.bin/tsx', ['src/worker/specialist.ts'], { stdio: 'inherit' });
+  const worker2 = spawn('./node_modules/.bin/tsx', ['src/worker/sentiment.ts'], { stdio: 'inherit' });
   processes.push(worker1, worker2);
-  const orchestrator = spawn('npx', ['tsx', 'src/orchestrator/engine.ts'], { stdio: 'inherit' });
+  const orchestrator = spawn('./node_modules/.bin/tsx', ['src/orchestrator/engine.ts'], { stdio: 'inherit' });
   processes.push(orchestrator);
 
-  console.log('Waiting 25s for services to start and stabilize on Live Network...');
-  await new Promise(r => setTimeout(r, 25000));
+  console.log('Polling for service readiness (max 120s)...');
+  await waitForServices([
+    'http://localhost:3001/health',
+    'http://localhost:3002/health',
+    'http://localhost:3000/health',
+  ], 120000);
+  console.log('All services ready. Starting stress test...\n');
 
-  const auditLogs = [];
+  const auditLogs: any[] = [];
 
   for (let i = 1; i <= ITERATIONS; i++) {
     try {
@@ -30,7 +66,7 @@ async function runStressTest() {
       });
 
       const { paid, margin, timestamp, workers } = response.data;
-      console.log(`   ✅ Success. Margin: $${margin} USDC`);
+      console.log(`   ✅ Success. Paid: $${paid.toFixed(4)} | Margin: $${margin} USDC`);
 
       auditLogs.push({
         iteration: i,
@@ -50,13 +86,13 @@ async function runStressTest() {
 
   // Save audit log
   fs.writeFileSync(AUDIT_FILE, JSON.stringify(auditLogs, null, 2));
-  console.log(`--- STRESS TEST COMPLETE ---`);
+  console.log(`\n--- STRESS TEST COMPLETE ---`);
   console.log(`Audit log saved to ${AUDIT_FILE}`);
-  
+
   const totalMargin = auditLogs.reduce((acc, log) => acc + log.margin, 0);
   const totalTxs = auditLogs.length * 3; // Approx 3 on-chain events per loop
-  
-  console.log(`Summary:`);
+
+  console.log(`\nSummary:`);
   console.log(`- Total Requests: ${auditLogs.length}`);
   console.log(`- Projected On-Chain Txs: ${totalTxs}`);
   console.log(`- Total Margin Earned: $${totalMargin.toFixed(4)} USDC`);

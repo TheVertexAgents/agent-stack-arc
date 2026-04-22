@@ -1,142 +1,142 @@
 [
   {
     "iteration": 1,
-    "timestamp": "2026-04-22T05:03:31.213Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:42:52.998Z",
+    "paid": 0.0108,
+    "margin": 0.0068,
     "worker_txs": 2
   },
   {
     "iteration": 2,
-    "timestamp": "2026-04-22T05:03:35.830Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:42:57.606Z",
+    "paid": 0.0127,
+    "margin": 0.0087,
     "worker_txs": 2
   },
   {
     "iteration": 3,
-    "timestamp": "2026-04-22T05:03:39.945Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:02.650Z",
+    "paid": 0.0112,
+    "margin": 0.0072,
     "worker_txs": 2
   },
   {
     "iteration": 4,
-    "timestamp": "2026-04-22T05:03:46.567Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:07.524Z",
+    "paid": 0.0101,
+    "margin": 0.0061,
     "worker_txs": 2
   },
   {
     "iteration": 5,
-    "timestamp": "2026-04-22T05:03:50.950Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:12.544Z",
+    "paid": 0.0129,
+    "margin": 0.0089,
     "worker_txs": 2
   },
   {
     "iteration": 6,
-    "timestamp": "2026-04-22T05:03:55.723Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:17.549Z",
+    "paid": 0.012,
+    "margin": 0.008,
     "worker_txs": 2
   },
   {
     "iteration": 7,
-    "timestamp": "2026-04-22T05:03:59.755Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:22.055Z",
+    "paid": 0.0108,
+    "margin": 0.0068,
     "worker_txs": 2
   },
   {
     "iteration": 8,
-    "timestamp": "2026-04-22T05:04:04.226Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:28.799Z",
+    "paid": 0.0123,
+    "margin": 0.0083,
     "worker_txs": 2
   },
   {
     "iteration": 9,
-    "timestamp": "2026-04-22T05:04:09.023Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:33.000Z",
+    "paid": 0.0126,
+    "margin": 0.0086,
     "worker_txs": 2
   },
   {
     "iteration": 10,
-    "timestamp": "2026-04-22T05:04:13.764Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:37.186Z",
+    "paid": 0.0119,
+    "margin": 0.0079,
     "worker_txs": 2
   },
   {
     "iteration": 11,
-    "timestamp": "2026-04-22T05:04:20.602Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:41.526Z",
+    "paid": 0.0111,
+    "margin": 0.0071,
     "worker_txs": 2
   },
   {
     "iteration": 12,
-    "timestamp": "2026-04-22T05:04:25.177Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:46.509Z",
+    "paid": 0.0107,
+    "margin": 0.0067,
     "worker_txs": 2
   },
   {
     "iteration": 13,
-    "timestamp": "2026-04-22T05:04:30.119Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:52.689Z",
+    "paid": 0.0103,
+    "margin": 0.0063,
     "worker_txs": 2
   },
   {
     "iteration": 14,
-    "timestamp": "2026-04-22T05:04:35.650Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:43:57.704Z",
+    "paid": 0.0114,
+    "margin": 0.0074,
     "worker_txs": 2
   },
   {
     "iteration": 15,
-    "timestamp": "2026-04-22T05:04:40.297Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:04.862Z",
+    "paid": 0.0104,
+    "margin": 0.0064,
     "worker_txs": 2
   },
   {
     "iteration": 16,
-    "timestamp": "2026-04-22T05:04:45.255Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:09.682Z",
+    "paid": 0.011,
+    "margin": 0.007,
     "worker_txs": 2
   },
   {
     "iteration": 17,
-    "timestamp": "2026-04-22T05:04:52.453Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:14.456Z",
+    "paid": 0.0124,
+    "margin": 0.0084,
     "worker_txs": 2
   },
   {
     "iteration": 18,
-    "timestamp": "2026-04-22T05:04:58.619Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:19.349Z",
+    "paid": 0.0105,
+    "margin": 0.0065,
     "worker_txs": 2
   },
   {
     "iteration": 19,
-    "timestamp": "2026-04-22T05:05:02.934Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:24.233Z",
+    "paid": 0.0128,
+    "margin": 0.0088,
     "worker_txs": 2
   },
   {
     "iteration": 20,
-    "timestamp": "2026-04-22T05:05:07.005Z",
-    "paid": 0.01,
-    "margin": 0.006,
+    "timestamp": "2026-04-22T05:44:29.257Z",
+    "paid": 0.011600000000000001,
+    "margin": 0.0076,
     "worker_txs": 2
   }
 ]

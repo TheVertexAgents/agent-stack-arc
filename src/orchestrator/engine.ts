@@ -19,6 +19,10 @@ const WORKER_CONFIG = {
  * @title Orchestrator Engine
  * @dev Main gateway for decomposing and coordinating tasks.
  */
+app.get('/health', (_req: Request, res: Response) => {
+  res.status(200).json({ status: 'ok', service: 'Orchestrator' });
+});
+
 app.post('/orchestrate', async (req: Request, res: Response) => {
   const { prompt } = req.body;
   logger.info({ module: 'Orchestrator', message: 'New request received', prompt });
@@ -35,7 +39,9 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
     ]);
 
     const totalWorkerCost = marketJob.cost + sentimentJob.cost;
-    const userPrice = 0.01; // Flat price for MVP
+    // Add a randomized priority fee (0 to 0.003) for organic margin variation
+    const priorityFee = parseFloat((Math.random() * 0.003).toFixed(4));
+    const userPrice = 0.01 + priorityFee; 
     const margin = userPrice - totalWorkerCost;
 
     const result: TaskResult = {

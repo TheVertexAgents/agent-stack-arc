@@ -34,6 +34,11 @@ export abstract class AbstractWorker {
   }
 
   private setupRoutes() {
+    // Readiness probe for stress test poller
+    this.app.get('/health', (_req: Request, res: Response) => {
+      res.status(200).json({ status: 'ok', service: this.serviceName });
+    });
+
     this.app.post('/task', async (req: Request, res: Response) => {
       const paymentProof = req.header('x-payment-proof');
 
