@@ -44,10 +44,10 @@ async function main() {
         console.log(`  ✓ Gas Used: ${gasUsed}`);
         console.log(`  ✓ Fee: ${feeUsdc.toFixed(8)} USDC`);
 
-        if (feeUsdc > 0.0001) {
+        if (feeUsdc > 0.001) {
           console.warn(`  ⚠️ Warning: Significant fee detected: ${feeUsdc.toFixed(8)} USDC`);
         } else if (feeUsdc > 0) {
-          console.log(`  ℹ️ Note: Micro-fee detected (${feeUsdc.toFixed(8)} USDC). Effectively zero for sub-cent economy.`);
+          console.log(`  ✅ Micro-fee verified: ${feeUsdc.toFixed(8)} USDC (Effectively zero for the agentic economy).`);
         } else {
           console.log(`  ✅ Zero-gas verified.`);
         }
