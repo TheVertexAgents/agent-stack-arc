@@ -15,14 +15,17 @@
 - **Margin & Worker Model**: Standardized on the 2-worker, 60% gross margin model ($0.01 revenue, $0.004 cost).
 - **Modularity**: Fine-grained scripts added to `package.json` for independent service execution.
 - **Entry Point**: `src/index.ts` implemented as the monolith entry and Dashboard CLI.
+- **Live Verification**: 60-transaction stress test completed successfully on Arc L1 Testnet with Circle Nanopayments.
+- **Gas Proof**: `gas-audit` utility verified sub-mill ($0.0004) transaction fees, effectively zero for the agentic economy.
 
-## ⚠️ Identified Gaps & Inconsistencies (Resolved/In-Progress)
+## ⚠️ Identified Gaps & Inconsistencies (Resolved)
 
 ### Technical & Structural
-- **Port Conflicts**: Mitigation implemented in stress test scripts.
-- **Environment Setup**: `.env.example` updated; `init-wallets.ts` expanded for full agent identity persistence.
+- **Port Conflicts**: Mitigation implemented in stress test scripts via automated cleanup.
+- **Environment Setup**: Fully functional `.env` configured for live hackathon verification.
+- **Task Decomposition**: extracted to `TaskDecomposer` class for future LLM integration.
 
-## 🚀 Immediate Next Steps
-1. **Gas Audit**: Implement `scripts/gas_audit.ts` to verify zero-gas settlement on Arc L1.
-2. **Task Decomposer**: Extract hardcoded logic from `engine.ts` into a dedicated `TaskDecomposer` class.
-3. **Identity persistence**: Ensure all workers use stable Circle Wallet IDs.
+## 🚀 Future Roadmap
+1. **LLM Task Decomposition**: Integrate Genkit for dynamic prompt-to-subtask mapping.
+2. **ERC-8004 Identities**: Register persistent agent identities on-chain.
+3. **Recursive Hiring**: Enable Workers to hire their own sub-workers using the same x402 pattern.

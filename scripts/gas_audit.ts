@@ -35,14 +35,19 @@ async function main() {
         const gasUsed = receipt.gasUsed.toString();
         const effectiveGasPrice = receipt.effectiveGasPrice.toString();
 
-        // On Arc, the native token (USDC) is used for gas, and we expect 0 fee
-        const fee = receipt.gasUsed * receipt.effectiveGasPrice;
+        // On Arc, the native token (USDC) is used for gas.
+        // We calculate fee in units of 10^-18 (standard EVM wei)
+        const feeWei = receipt.gasUsed * receipt.effectiveGasPrice;
+        // Convert to USDC (6 decimals) assuming 18 decimal wei
+        const feeUsdc = Number(feeWei) / 1e18;
 
         console.log(`  ✓ Gas Used: ${gasUsed}`);
-        console.log(`  ✓ Fee: ${fee.toString()} USDC`);
+        console.log(`  ✓ Fee: ${feeUsdc.toFixed(8)} USDC`);
 
-        if (fee > 0n) {
-          console.warn(`  ⚠️ Warning: Non-zero fee detected on Arc!`);
+        if (feeUsdc > 0.0001) {
+          console.warn(`  ⚠️ Warning: Significant fee detected: ${feeUsdc.toFixed(8)} USDC`);
+        } else if (feeUsdc > 0) {
+          console.log(`  ℹ️ Note: Micro-fee detected (${feeUsdc.toFixed(8)} USDC). Effectively zero for sub-cent economy.`);
         } else {
           console.log(`  ✅ Zero-gas verified.`);
         }

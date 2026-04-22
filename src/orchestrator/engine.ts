@@ -37,7 +37,7 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
         name: subTasks[i].workerName,
         cost: job.cost,
         result: job.result,
-        proof: job.result?.proof || job.result?.txHash || null
+        proof: job.proof || job.result?.proof || job.result?.txHash || null
       };
     });
 

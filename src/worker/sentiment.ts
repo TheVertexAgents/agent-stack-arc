@@ -22,11 +22,11 @@ export class SentimentWorker extends AbstractWorker {
 
 // Start standalone if script is run directly
 if (process.argv[1]?.includes('sentiment.ts')) {
-  const address = process.env.WORKER_SENTIMENT_ADDRESS || '0x0000000000000000000000000000000000000002';
+  const key = process.env.WORKER_2_PRIVATE_KEY || process.env.WORKER_SENTIMENT_ADDRESS || '0x0000000000000000000000000000000000000002';
   const worker = new SentimentWorker(
     'SentimentWorker', 
     3002, 
-    address
+    key
   );
   worker.start();
 }

@@ -40,13 +40,15 @@ export class Contractor {
 
         return {
           cost: parseFloat(challenge.amount),
-          result: retryResponse.data
+          result: retryResponse.data,
+          proof: txHash
         };
       }
 
       return {
         cost: 0, // Already paid or free
-        result: response.data
+        result: response.data,
+        proof: null
       };
     } catch (error: any) {
       logger.error({ module: 'Contractor', message: 'Hiring failed', error: error.message });
