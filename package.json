@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "tsx src/index.ts",
+    "init-wallets": "tsx scripts/init_circle_wallets.ts",
+    "smoke-test": "tsx scripts/smoke_test.ts",
     "stress-test": "tsx scripts/stress_test.ts"
   },
   "dependencies": {

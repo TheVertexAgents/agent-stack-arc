@@ -39,9 +39,9 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
     ]);
 
     const totalWorkerCost = marketJob.cost + sentimentJob.cost;
-    // Add a randomized priority fee (0 to 0.003) for organic margin variation
-    const priorityFee = parseFloat((Math.random() * 0.003).toFixed(4));
-    const userPrice = 0.01 + priorityFee; 
+    // Strict sub-cent compliance: USER_PRICE ≤ $0.01 per hackathon rules
+    const USER_PRICE = 0.01;
+    const userPrice = USER_PRICE;
     const margin = userPrice - totalWorkerCost;
 
     const result: TaskResult = {
