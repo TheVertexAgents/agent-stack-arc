@@ -12,8 +12,8 @@ export interface SubTask {
  */
 export class TaskDecomposer {
   private static WORKER_CONFIG = {
-    MARKET_DATA: 'http://localhost:3001/task',
-    SENTIMENT: 'http://localhost:3002/task'
+    MARKET_DATA: process.env.WORKER_MARKET_URL || 'http://localhost:3001/task',
+    SENTIMENT: process.env.WORKER_SENTIMENT_URL || 'http://localhost:3002/task'
   };
 
   /**

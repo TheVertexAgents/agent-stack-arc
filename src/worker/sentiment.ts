@@ -23,9 +23,10 @@ export class SentimentWorker extends AbstractWorker {
 // Start standalone if script is run directly
 if (process.argv[1]?.includes('sentiment.ts')) {
   const key = process.env.WORKER_2_PRIVATE_KEY || process.env.WORKER_SENTIMENT_ADDRESS || '0x0000000000000000000000000000000000000002';
+  const port = parseInt(process.env.WORKER_SENTIMENT_PORT || '3002');
   const worker = new SentimentWorker(
     'SentimentWorker', 
-    3002, 
+    port, 
     key
   );
   worker.start();

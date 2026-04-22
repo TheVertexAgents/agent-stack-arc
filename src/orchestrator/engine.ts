@@ -7,11 +7,18 @@ import { TaskDecomposer } from './decomposer.js';
 import type { TaskResult } from '../types/orchestrator.js';
 import { v4 as uuidv4 } from 'uuid';
 
+// Polyfill for Node.js 18 to support uuid v9+
+if (typeof crypto === 'undefined') {
+  const nodeCrypto = await import('node:crypto');
+  // @ts-ignore
+  globalThis.crypto = nodeCrypto.webcrypto;
+}
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.ORCHESTRATOR_PORT || process.env.PORT || 3000;
 
 /**
  * @title Orchestrator Engine
