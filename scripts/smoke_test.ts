@@ -30,7 +30,8 @@ async function main() {
     while (attempts < maxAttempts) {
       try {
         attempts++;
-        const response = await axios.post('http://localhost:3000/orchestrate', {
+        const orchestratorPort = process.env.ORCHESTRATOR_PORT || 3003;
+        const response = await axios.post(`http://localhost:${orchestratorPort}/orchestrate`, {
           prompt: 'Give me BTC sentiment + OHLCV for today'
         });
         result = response.data;

@@ -11,7 +11,9 @@
     "start-workers": "tsx scripts/start_workers.ts",
     "init-wallets": "tsx scripts/init_circle_wallets.ts",
     "smoke-test": "tsx scripts/smoke_test.ts",
-    "stress-test": "tsx scripts/stress_test.ts"
+    "stress-test": "tsx scripts/stress_test.ts",
+    "install:all": "npm install && cd vertex-sentinel && npm install",
+    "demo:integrated": "tsx scripts/integrated_demo.ts"
   },
   "dependencies": {
     "@circle-fin/developer-controlled-wallets": "^10.3.0",

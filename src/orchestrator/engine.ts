@@ -7,7 +7,7 @@ import type { TaskResult } from '../types/orchestrator.js';
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.ORCHESTRATOR_PORT || 3003;
 
 // Configured Worker URLs
 const WORKER_CONFIG = {
