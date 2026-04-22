@@ -7,6 +7,14 @@ const processes: ChildProcess[] = [];
 async function main() {
   console.log('--- STARTING AGENTSTACK SMOKE TEST ---');
 
+  // 0. Pre-flight Cleanup
+  const ports = [3001, 3002, 3003];
+  console.log(`Cleaning up ports: ${ports.join(', ')}`);
+  try {
+    spawn('sh', ['-c', `kill $(lsof -t -i :${ports.join(',')}) 2>/dev/null || true`]);
+    await new Promise(r => setTimeout(r, 2000));
+  } catch (e) {}
+
   // 1. Start Workers
   const worker1 = spawn('npx', ['tsx', 'src/worker/specialist.ts'], { stdio: 'inherit' });
   const worker2 = spawn('npx', ['tsx', 'src/worker/sentiment.ts'], { stdio: 'inherit' });
