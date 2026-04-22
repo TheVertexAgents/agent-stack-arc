@@ -17,6 +17,6 @@ By 2026, agents will execute billions of micro-tasks per day. To unlock this val
 **AgentStack** solves these problems by providing an orchestration gateway that:
 - Deploys **Circle Nanopayments** to enable sub-cent, off-chain payment instructions.
 - Settles transactions on **Arc L1**, where USDC is the native gas token and transactions are cost-minimized to $0.00.
-- Implements the **x402 Handshake**, allowing agents to "hire" each other trustlessly with verifiable margin proof (e.g., 60% gross profit on a $0.01 action).
+- Implements the **x402 Handshake**, allowing agents to "hire" each other trustlessly with verifiable margin proof (60% gross profit on a $0.01 action).
 
 **With AgentStack, paying for one specific API call is finally cheaper than the software itself.**

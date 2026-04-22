@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "tsx src/index.ts",
+    "start-orchestrator": "tsx src/orchestrator/engine.ts",
+    "start-worker-market": "tsx src/worker/specialist.ts",
+    "start-worker-sentiment": "tsx src/worker/sentiment.ts",
+    "start-workers": "tsx scripts/start_workers.ts",
     "init-wallets": "tsx scripts/init_circle_wallets.ts",
     "smoke-test": "tsx scripts/smoke_test.ts",
     "stress-test": "tsx scripts/stress_test.ts"
