@@ -47,8 +47,9 @@ async function main() {
       console.log('Response Detail:');
       console.log(JSON.stringify(result, null, 2));
 
-      if (result.margin > 0) {
-        console.log(`✅ Margin Proof verified: $${result.margin} USDC earned`);
+      const marginValue = parseFloat(result.margin);
+      if (marginValue > 0) {
+        console.log(`✅ Margin Proof verified: ${result.margin} gross profit`);
       } else {
         console.error('❌ Negative margin detected!');
       }

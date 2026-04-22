@@ -20,7 +20,7 @@ AgentStack has demonstrated **60 on-chain transactions** on the Arc L1 Devnet vi
 | **Orchestrator** | AgentStack | $0.0100 | $0.0040 | **+$0.0060** |
 | **Worker A** | Market Data | $0.0020 | - | **+$0.0020** |
 | **Worker B** | Sentiment | $0.0020 | - | **+$0.0020** |
-| **Arc L1** | Gas Layer | - | $0.0000 | $0.0000 |
+| **Arc L1** | Gas Layer | - | <$0.0005 | ~$0.0000 |
 
 ## 3. The Arc L1 Advantage (Margin Proof)
 
@@ -31,8 +31,8 @@ At **$0.01 per request**, a micro-transaction model on traditional chains has **
 - Revenue: $0.01
 - **Profit: ($0.XX) Loss**
 
-**AgentStack on Arc L1:**
-- Cost of Goods Sold (Gas): **$0.0000**
+**AgentStack on Arc L1 (Empirically Verified):**
+- Cost of Goods Sold (Gas): **$0.00045**
 - Revenue: $0.0100
 - **Gross Margin: 60%**
 

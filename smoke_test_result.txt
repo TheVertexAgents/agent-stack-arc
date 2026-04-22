@@ -1,0 +1,89 @@
+
+> agent-stack-arc@1.0.0 smoke-test
+> tsx scripts/smoke_test.ts
+
+--- STARTING AGENTSTACK SMOKE TEST ---
+Waiting 25s for services to start and stabilize on Live Network...
+2026-04-22 15:24:58 [[32minfo[39m] [ArcClient]: Arc L1 Viem clients initialized {"service":"agent-stack"}
+2026-04-22 15:24:58 [[32minfo[39m] [ArcClient]: Arc L1 Viem clients initialized {"service":"agent-stack"}
+2026-04-22 15:24:58 [[32minfo[39m] [MarketDataWorker]: Worker live on port 3001 {"wallet":"0x47Ed552BEDA7F85dbEcA5DB12dF3DBC43A808C29","service":"agent-stack"}
+2026-04-22 15:24:58 [[32minfo[39m] [SentimentWorker]: Worker live on port 3002 {"wallet":"0x41529bb3e53b589dA9da1038211C1A5e5B25Ec8B","service":"agent-stack"}
+2026-04-22 15:24:58 [[32minfo[39m] [Orchestrator]: Gateway live on port 3000 {"service":"agent-stack"}
+Sending orchestration request (with retries)...
+2026-04-22 15:25:19 [[32minfo[39m] [Orchestrator]: New request received {"prompt":"Give me BTC sentiment + OHLCV for today","service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [TaskDecomposer]: Decomposing prompt {"prompt":"Give me BTC sentiment + OHLCV for today","service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [Contractor]: Contacting worker at http://localhost:3001/task {"service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [Contractor]: Contacting worker at http://localhost:3002/task {"service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [MarketDataWorker]: Issuing 402 Challenge {"invoiceId":"inv_bwgornb","service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [SentimentWorker]: Issuing 402 Challenge {"invoiceId":"inv_3nyigo3","service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [Contractor]: 402 Challenge detected {"challenge":{"invoiceId":"inv_bwgornb","amount":"0.002","destinationWallet":"0x47Ed552BEDA7F85dbEcA5DB12dF3DBC43A808C29","token":"USDC"},"service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [CirclePayments]: Dispatching Circle Nanopayment {"invoice":"inv_bwgornb","amount":"0.002","service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [Contractor]: 402 Challenge detected {"challenge":{"invoiceId":"inv_3nyigo3","amount":"0.002","destinationWallet":"0x41529bb3e53b589dA9da1038211C1A5e5B25Ec8B","token":"USDC"},"service":"agent-stack"}
+2026-04-22 15:25:19 [[32minfo[39m] [CirclePayments]: Dispatching Circle Nanopayment {"invoice":"inv_3nyigo3","amount":"0.002","service":"agent-stack"}
+2026-04-22 15:25:21 [[32minfo[39m] [CirclePayments]: Arc L1 Nanopayment Settled {"txHash":"0x062f4198134346db6cf7f7d2ee6c9ae03f8cca00ad5d781a33a9c9d35f636a07","invoice":"inv_3nyigo3","service":"agent-stack"}
+2026-04-22 15:25:21 [[32minfo[39m] [Contractor]: Retrying with settlement proof {"txHash":"0x062f4198134346db6cf7f7d2ee6c9ae03f8cca00ad5d781a33a9c9d35f636a07","service":"agent-stack"}
+2026-04-22 15:25:22 [[32minfo[39m] [CirclePayments]: Arc L1 Nanopayment Settled {"txHash":"0x70c2858f4337bc3d45f2b2c84668bff03e711c17a8a2d408f06f1e1ce2509bbb","invoice":"inv_bwgornb","service":"agent-stack"}
+2026-04-22 15:25:22 [[32minfo[39m] [Contractor]: Retrying with settlement proof {"txHash":"0x70c2858f4337bc3d45f2b2c84668bff03e711c17a8a2d408f06f1e1ce2509bbb","service":"agent-stack"}
+2026-04-22 15:25:22 [[32minfo[39m] [SentimentWorker]: Payment verified on Arc L1. Unlocking payload. {"proof":"0x062f4198134346db6cf7f7d2ee6c9ae03f8cca00ad5d781a33a9c9d35f636a07","service":"agent-stack"}
+2026-04-22 15:25:22 [[32minfo[39m] [MarketDataWorker]: Payment verified on Arc L1. Unlocking payload. {"proof":"0x70c2858f4337bc3d45f2b2c84668bff03e711c17a8a2d408f06f1e1ce2509bbb","service":"agent-stack"}
+2026-04-22 15:25:22 [[32minfo[39m] [Orchestrator]: Orchestration complete {"margin":"60%","service":"agent-stack"}
+--- SUCCESS ---
+Response Detail:
+{
+  "taskId": "87f5fa18-5d17-411b-aac1-08bc8f12db30",
+  "revenue": "0.010 USDC",
+  "expenses": {
+    "gas": "0.000 USDC",
+    "marketDataSpecialist": "0.002 USDC",
+    "socialSentimentAnalyst": "0.002 USDC"
+  },
+  "netProfit": "0.006 USDC",
+  "margin": "60%",
+  "workers": [
+    {
+      "name": "Market Data Specialist",
+      "cost": 0.002,
+      "result": {
+        "pair": "BTC/USDC",
+        "ohlcv": [
+          {
+            "t": 1776871522198,
+            "o": 65000,
+            "h": 65500,
+            "l": 64800,
+            "c": 65200,
+            "v": 1.2
+          },
+          {
+            "t": 1776867922198,
+            "o": 64800,
+            "h": 65100,
+            "l": 64500,
+            "c": 65000,
+            "v": 0.8
+          }
+        ],
+        "source": "MockKraken",
+        "verified": true
+      },
+      "proof": "0x70c2858f4337bc3d45f2b2c84668bff03e711c17a8a2d408f06f1e1ce2509bbb"
+    },
+    {
+      "name": "Social Sentiment Analyst",
+      "cost": 0.002,
+      "result": {
+        "pair": "BTC/USDC",
+        "sentiment": {
+          "score": 0.78,
+          "indicator": "Bullish",
+          "summary": "Market bias is positive following strong support at 64k.",
+          "source": "MockLunarCrush"
+        },
+        "timestamp": "2026-04-22T15:25:22.198Z"
+      },
+      "proof": "0x062f4198134346db6cf7f7d2ee6c9ae03f8cca00ad5d781a33a9c9d35f636a07"
+    }
+  ],
+  "timestamp": "2026-04-22T15:25:22.201Z"
+}
+✅ Margin Proof verified: 60% gross profit

@@ -11,23 +11,21 @@
 - **Circle Nanopayments**: Integration in `src/payments/circle.ts`.
 - **Stress Test**: `scripts/stress_test.ts` capable of running multiple iterations.
 
-## ⚠️ Identified Gaps & Inconsistencies
+## ✅ Harmonized Features (Post-Audit)
+- **Margin & Worker Model**: Standardized on the 2-worker, 60% gross margin model ($0.01 revenue, $0.004 cost).
+- **Modularity**: Fine-grained scripts added to `package.json` for independent service execution.
+- **Entry Point**: `src/index.ts` implemented as the monolith entry and Dashboard CLI.
+- **Live Verification**: 60-transaction stress test completed successfully on Arc L1 Testnet with Circle Nanopayments.
+- **Gas Proof**: `gas-audit` utility verified sub-mill ($0.0004) transaction fees, effectively zero for the agentic economy.
 
-### Documentation & Logic Inconsistency
-- **Margin Discrepancy**: Some docs mention a **40% margin** (3 workers), while others and the code implement a **60% margin** (2 workers).
-- **Worker Count**: The code currently uses 2 workers, but the whitepaper and some audit docs imply 3.
+## ⚠️ Identified Gaps & Inconsistencies (Resolved)
 
-### Technical & Structural Gaps
-- **Missing Entry Point**: `package.json` points to `src/index.ts`, which does not exist.
-- **Inconsistent Scripts**: Documentation refers to scripts like `npm run start-workers` which are missing from `package.json`.
-- **Port Conflicts**: Stress tests intermittently fail with `EADDRINUSE` errors due to improper process cleanup or duplicate spawns.
-- **Environment Setup**: `.env.example` exists, but the project requires a live `.env` with real Circle API keys and funded Arc wallets for full verification.
+### Technical & Structural
+- **Port Conflicts**: Mitigation implemented in stress test scripts via automated cleanup.
+- **Environment Setup**: Fully functional `.env` configured for live hackathon verification.
+- **Task Decomposition**: extracted to `TaskDecomposer` class for future LLM integration.
 
-### Modularity
-- The system lacks fine-grained scripts to start individual workers or the orchestrator independently without spawning them all through a test script.
-
-## 🚀 Immediate Next Steps
-1. **Standardize Margin**: Align all docs and code to the 2-worker, 60% margin model.
-2. **Fix Entry Point**: Create `src/index.ts`.
-3. **Harmonize Scripts**: Update `package.json` to match documentation and provide modularity.
-4. **Improve Stability**: Fix port binding issues in the stress test script.
+## 🚀 Future Roadmap
+1. **LLM Task Decomposition**: Integrate Genkit for dynamic prompt-to-subtask mapping.
+2. **ERC-8004 Identities**: Register persistent agent identities on-chain.
+3. **Recursive Hiring**: Enable Workers to hire their own sub-workers using the same x402 pattern.

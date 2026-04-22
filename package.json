@@ -10,6 +10,7 @@
     "start-worker-sentiment": "tsx src/worker/sentiment.ts",
     "start-workers": "tsx scripts/start_workers.ts",
     "init-wallets": "tsx scripts/init_circle_wallets.ts",
+    "gas-audit": "tsx scripts/gas_audit.ts",
     "smoke-test": "tsx scripts/smoke_test.ts",
     "stress-test": "tsx scripts/stress_test.ts"
   },
@@ -19,15 +20,19 @@
     "axios": "^1.15.1",
     "blessed": "^0.1.81",
     "chalk": "^5.6.2",
+    "cors": "^2.8.6",
     "dotenv": "^16.6.1",
     "express": "^4.22.1",
+    "uuid": "^14.0.0",
     "viem": "^2.48.2",
     "winston": "^3.19.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^4.17.18",
     "@types/node": "^20.19.39",
+    "@types/uuid": "^10.0.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"

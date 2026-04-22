@@ -77,15 +77,15 @@ async function runStressTest() {
         prompt: `Stress test request #${i}: Market Data + Sentiment for BTC`
       });
 
-      const { paid, margin, timestamp, workers } = response.data;
-      console.log(`   ✅ Success. Paid: $${paid.toFixed(4)} | Margin: $${margin} USDC`);
+      const { revenue, margin, timestamp, workers } = response.data;
+      console.log(`   ✅ Success. Revenue: ${revenue} | Margin: ${margin}`);
 
       auditLogs.push({
         iteration: i,
         timestamp,
-        paid,
+        revenue,
         margin,
-        worker_txs: workers.length
+        workers
       });
 
     } catch (error: any) {
@@ -101,13 +101,13 @@ async function runStressTest() {
   console.log(`\n--- STRESS TEST COMPLETE ---`);
   console.log(`Audit log saved to ${AUDIT_FILE}`);
 
-  const totalMargin = auditLogs.reduce((acc, log) => acc + log.margin, 0);
+  const totalMargin = auditLogs.reduce((acc, log) => acc + parseFloat(log.margin), 0);
   const totalTxs = auditLogs.length * 3; // Approx 3 on-chain events per loop
 
   console.log(`\nSummary:`);
   console.log(`- Total Requests: ${auditLogs.length}`);
   console.log(`- Projected On-Chain Txs: ${totalTxs}`);
-  console.log(`- Total Margin Earned: $${totalMargin.toFixed(4)} USDC`);
+  console.log(`- Total Profit Earned: ${totalMargin.toFixed(1)}% (cumulative)`);
 
   processes.forEach(p => p.kill());
   process.exit(0);
