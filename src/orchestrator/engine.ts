@@ -33,6 +33,27 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
   logger.info({ module: 'Orchestrator', message: 'New request received', prompt });
 
   try {
+    // Phase 1: x402 Handshake Check
+    const paymentProof = req.headers['x402-payment-proof'];
+    const ORCHESTRATOR_WALLET = process.env.ORCHESTRATOR_WALLET_ADDRESS || '0x423a9904e39537a9997fbaF0f220d79D7d545763';
+    const INVOICE_ID = uuidv4();
+    const FEE = "0.010"; // 0.01 USDC
+
+    if (!paymentProof) {
+      logger.warn({ module: 'Orchestrator', message: 'Missing payment proof - requesting x402' });
+      res.setHeader('x402-payment-request', `${INVOICE_ID}:${FEE}:${ORCHESTRATOR_WALLET}`);
+      return res.status(402).json({ 
+        error: 'Payment Required', 
+        message: 'This orchestration request requires a nanopayment on Arc L1.',
+        invoiceId: INVOICE_ID,
+        amount: FEE,
+        destination: ORCHESTRATOR_WALLET
+      });
+    }
+
+    logger.info({ module: 'Orchestrator', message: 'Payment proof received', proof: paymentProof });
+
+    // Phase 2: Orchestration Logic
     const subTasks = TaskDecomposer.decompose(prompt);
     
     const jobs = await Promise.all(
@@ -50,7 +71,7 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
       };
     });
 
-    const USER_PRICE = 0.01;
+    const USER_PRICE = parseFloat(FEE);
     const netProfit = USER_PRICE - totalWorkerCost;
     const marginPercent = (netProfit / USER_PRICE) * 100;
 
@@ -61,19 +82,21 @@ app.post('/orchestrate', async (req: Request, res: Response) => {
     });
 
     const result: TaskResult = {
-      taskId: uuidv4(),
+      taskId: INVOICE_ID,
       revenue: `${USER_PRICE.toFixed(3)} USDC`,
       expenses,
       netProfit: `${netProfit.toFixed(3)} USDC`,
       margin: `${marginPercent.toFixed(0)}%`,
       workers: workerResults,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      settlementHash: paymentProof as string // In a real scenario, we'd provide our own settlement hash here too
     };
 
     logger.info({ 
       module: 'Orchestrator', 
       message: 'Orchestration complete', 
-      margin: result.margin 
+      margin: result.margin,
+      proof: result.settlementHash
     });
 
     return res.status(200).json(result);
